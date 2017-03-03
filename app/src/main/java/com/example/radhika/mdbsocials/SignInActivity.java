@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +38,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void init () {
         email = (EditText) (findViewById(R.id.emailAddressText));
         password = (EditText) (findViewById(R.id.passwordTextView));
-
         logInButton = ((Button) (findViewById(R.id.signInButton)));
         logInButton.setOnClickListener(this);
         signUpText = ((TextView) (findViewById(R.id.signUpText)));
@@ -68,8 +68,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick (View view) {
         switch (view.getId()) {
             case R.id.signInButton:
-                if (email.getText().toString().length() > 0 && password.getText().toString().length() > 0)
+                if (email.getText().toString().length() > 0 && password.getText().toString().length() > 0) {
                     signIn(email.getText().toString(), password.getText().toString());
+                }
                 else
                     Toast.makeText(SignInActivity.this, "Sign In Problem", Toast.LENGTH_SHORT).show();
                 break;

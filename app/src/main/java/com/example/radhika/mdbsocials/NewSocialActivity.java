@@ -1,8 +1,13 @@
 package com.example.radhika.mdbsocials;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +30,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -112,7 +120,16 @@ public class NewSocialActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
-    @Override
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        // refer to http://codetheory.in/android-pick-select-image-from-gallery-with-intents/
+//        if (requestCode == 1 && resultCode == RESULT_OK &&
+//                data != null && data.getData() != null) {
+//            uri = data.getData();
+//            uploadedPicture = true;
+//        }
+//    }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // refer to http://codetheory.in/android-pick-select-image-from-gallery-with-intents/

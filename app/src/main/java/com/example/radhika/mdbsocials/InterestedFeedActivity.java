@@ -49,7 +49,7 @@ public class InterestedFeedActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance().getReference();
         db = db.child("Socials").child(key);
         adapter = new InterestedFeedAdapter(getApplicationContext(), interested);
-
+        recyclerView.setAdapter(adapter);
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -61,6 +61,6 @@ public class InterestedFeedActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError firebaseError) {}
         });
-        recyclerView.setAdapter(adapter);
+
     }
 }

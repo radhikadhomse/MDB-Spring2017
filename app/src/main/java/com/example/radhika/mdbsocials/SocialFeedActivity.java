@@ -29,6 +29,8 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
     FloatingActionButton addSocialButton;
     Button signOut;
     static List<String> keys;
+    RecyclerView recyclerView;
+    ArrayList<Social> socials;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,23 +41,23 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
         addSocialButton.setOnClickListener(this);
         signOut = (Button) (findViewById(R.id.signOutButton));
         signOut.setOnClickListener(this);
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recView);
+        socials = new ArrayList<>();
+        recyclerView = (RecyclerView) findViewById(R.id.recView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         initDB();
 
-        recyclerView.setAdapter(adapter);
+//        recyclerView.setAdapter(adapter);
     }
 
     private void initDB () {
         db = FirebaseDatabase.getInstance().getReference();
         Utils.getUser(db, FirebaseAuth.getInstance().getCurrentUser());
-        final ArrayList<Social> socials = new ArrayList<>();
         adapter = new SocialFeedAdapter(getApplicationContext(), socials);
         db.child("Socials").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+                socials = new ArrayList<Social>();
                 Map<Social, String> map = new HashMap<>();
 
                 for (DataSnapshot p : snapshot.getChildren()) {
@@ -72,7 +74,7 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
                     keys.add(map.get(s));
 
                 adapter.socials = socials;
-                adapter.notifyDataSetChanged();
+                recyclerView.setAdapter(adapter);
             }
 
             @Override

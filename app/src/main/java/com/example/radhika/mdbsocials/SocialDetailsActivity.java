@@ -1,5 +1,8 @@
 package com.example.radhika.mdbsocials;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -93,7 +96,7 @@ public class SocialDetailsActivity extends AppCompatActivity implements View.OnC
         }
     }
     public void setUp(final Social s) {
-        BitmapAsyncTask b = new BitmapAsyncTask();
+        BitmapAsyncTask b = new BitmapAsyncTask(this, getApplicationContext());
         b.execute(s.getImageUrl());
 //        Glide.with(getApplicationContext())
 //                .load(s.getImageUrl())
@@ -105,7 +108,12 @@ public class SocialDetailsActivity extends AppCompatActivity implements View.OnC
         numInterested = s.getNumInterested();
 
     }
-    class BitmapAsyncTask extends AsyncTask<String, Void, Bitmap> {
+    class BitmapAsyncTask extends AsyncTask<String, Integer, Bitmap> {
+        private ProgressDialog dialog;
+        public BitmapAsyncTask(Activity act, Context context) {
+            super();
+            dialog = new ProgressDialog(act);
+        }
         @Override
         protected Bitmap doInBackground(String... params) {
             try {
@@ -121,12 +129,26 @@ public class SocialDetailsActivity extends AppCompatActivity implements View.OnC
             }
         }
 
+        protected void onPreExecute() {
+            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setCancelable(true);
+            dialog.setMessage("Loading...");
+            dialog.setProgress(0);
+            dialog.show();
+        }
+
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             if (bitmap != null) {
                 eventImage.setImageBitmap(bitmap);
+                super.onPostExecute(bitmap);
             }
-            super.onPostExecute(bitmap);
+            dialog.dismiss();
+        }
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            dialog.show();
+            dialog.setProgress(values[0]);
         }
     }
 }
