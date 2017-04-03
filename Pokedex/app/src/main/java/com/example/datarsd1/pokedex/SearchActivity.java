@@ -161,9 +161,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId())
         {
             case R.id.filter:
-                LayoutInflater li = LayoutInflater.from(getApplicationContext());
+                LayoutInflater li = LayoutInflater.from(this);
                 View promptsView = li.inflate(R.layout.filter_input, null);
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getApplicationContext());
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
                 alertDialogBuilder.setView(promptsView);
 
@@ -198,7 +198,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.typefilter:
-                LayoutInflater tli = LayoutInflater.from(getApplicationContext());
+                LayoutInflater tli = LayoutInflater.from(this);
                 View typePromptsView = tli.inflate(R.layout.type_input, null);
                 final Spinner type1Spinner = (Spinner) typePromptsView.findViewById(R.id.type1spinner);
                 final Spinner type2Spinner = (Spinner) typePromptsView.findViewById(R.id.type2spinner);
@@ -212,7 +212,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 type1Spinner.setSelection(adapter.getPosition(filterType1));
                 type2Spinner.setSelection(adapter.getPosition(filterType2));
 
-                AlertDialog.Builder typeAlertDialogBuilder = new AlertDialog.Builder(getApplicationContext());
+                AlertDialog.Builder typeAlertDialogBuilder = new AlertDialog.Builder(this);
                 typeAlertDialogBuilder.setView(typePromptsView);
                 typeAlertDialogBuilder
                         .setCancelable(false)
