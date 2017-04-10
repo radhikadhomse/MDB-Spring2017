@@ -1,7 +1,9 @@
-# sp17proj3android
+Purpose: 
+MDB Socials is an app that lets MDB members create their own events and express interest in other social events.
 
-Repository for Spring 2017 MDB Android Training Program Mini-Project 3 Submissions
-
-Finalized mini-projects should be stored in personal portfolios, but this repository will be used for providing feedback on code quality using the GitHub code review features.
-
-When pushing code to this repo, DO NOT push to master. Create a new branch and open a pull request.
+Technologies: 
+- RecyclerViews
+- Firebase 
+    - Realtime Database
+    - Storage
+    - Authentication 
