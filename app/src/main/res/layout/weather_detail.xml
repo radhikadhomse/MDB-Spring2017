@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/weatherDetailCityID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cardshape"
+        android:padding="7sp"
+        android:layout_margin="10sp"
+        android:text="City"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="#222"/>
+    <TextView
+        android:id="@+id/weatherDetailSummaryID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cardshape"
+        android:padding="7sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:text="Summary"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#222"/>
+
+</LinearLayout>

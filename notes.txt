@@ -1,0 +1,28 @@
+Code Issues:
+Recyclerview onclick listener incomplete. Added functionality for app to display weather details by clicking cardview of city.
+Cleaned up code for weather generation and parsing. Added general Util methods to automate functions like Weather object creation, etc.
+Made model objects for Weather, City, etc.
+
+Legal Issues:
+added "Powered by DarkSky API" to app title.
+
+Design issues:
+"Bland" UI but this was intentional - wanted minimalistic app. Nonetheless, tweaked to get "brighter", "livelier" colors.
+CardViews not working right
+Issues with icon dimensions and loading icons
+Color Scheme overhaul?
+
+Dribbble designs:
+Compilation of very nice weather icons
+https://dribbble.com/shots/3416567-Weather-outline-icons
+Standard title - icon - temperature cardview designs in RecyclerView for weather
+https://dribbble.com/shots/3406435-Daily-UI-037-Weather
+https://dribbble.com/shots/3406600-Weather-App-Update
+Unique weather cardview design with background splash across cardview - probably made by adjusting alpha values on CV components
+https://dribbble.com/shots/3401004-Weather-App-Illustration-Igloo
+Yahoo! weather app design - not on dribbble but the most widely used weather app in the world nonetheless
+https://lh3.ggpht.com/XSbeeZmAqXKPmdKH9smlja4Z3rW8G1x9nWA-PMFt-FO1tmGycKK6pEIiAUhah8EF1oE=h900
+
+Design notes:
+Went with a combination of title-icon-temperature design.
+Wire view designs from dribbble for borders
