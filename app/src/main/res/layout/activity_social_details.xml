@@ -6,7 +6,7 @@
     android:id="@+id/detailView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg2"
+    android:background="@drawable/blue_white_bg"
     android:paddingBottom="16dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -23,7 +23,7 @@
         android:textAlignment="center"
         android:textSize="40sp"
         tools:layout_editor_absoluteY="75dp"
-        android:textColor="@color/bg3"
+        android:textColor="#1E3F80"
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="normal|bold" />
 
@@ -32,8 +32,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Date"
-        android:textColor="@android:color/black"
+        android:textColor="#1E3F80"
         android:textSize="16sp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="normal|bold"
         android:layout_marginBottom="10dp" />
 
     <ImageView
@@ -79,8 +83,8 @@
             android:layout_width="120dp"
             android:gravity="center_vertical|center_horizontal|center"
             android:layout_weight="1"
-            android:backgroundTint="@color/bg3"
-            android:textColor="@android:color/white"
+            android:backgroundTint="#C9F7FF"
+            android:textColor="#1E3F80"
             android:textStyle="bold" />
 
         <Button
@@ -90,9 +94,9 @@
             android:text="# Interested"
             android:layout_width="120dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/bg3"
+            android:backgroundTint="#C9F7FF"
             android:textStyle="bold"
-            android:textColor="@android:color/white" />
+            android:textColor="#1E3F80" />
     </LinearLayout>
 
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/activity_new_social"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg1"
+    android:background="@drawable/blue_white_bg"
     tools:context="com.example.radhika.mdbsocials.NewSocialActivity">
 
     <TextView
@@ -100,7 +100,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/doneButton"
-        android:background="@color/border1"
+        android:background="#3865BE"
+        android:textColor="#ffffff"
         app:layout_constraintLeft_toLeftOf="@+id/eventDescription"
         app:layout_constraintRight_toRightOf="@+id/eventDescription"
         app:layout_constraintBottom_toBottomOf="parent"

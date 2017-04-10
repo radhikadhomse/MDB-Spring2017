@@ -5,7 +5,7 @@
     android:id="@+id/activity_sign_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg1"
+    android:background="@drawable/blue_white_bg"
     tools:context="com.example.radhika.mdbsocials.SignInActivity">
 
     <TextView
@@ -17,7 +17,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:textAlignment="center"
         android:gravity="center"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,7 +26,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
         android:textStyle="normal|bold"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="#000000" />
 
     <EditText
         android:layout_width="250dp"
@@ -38,7 +38,7 @@
         android:fontFamily="monospace"
         android:background="@drawable/edit_text_border"
         android:textAlignment="center"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/signInTextView"
         app:layout_constraintRight_toRightOf="@+id/signInTextView"
@@ -57,7 +57,7 @@
         android:background="@drawable/edit_text_border"
         android:editable="true"
         android:textAlignment="center"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:gravity="center"
         app:layout_constraintRight_toRightOf="@+id/emailAddressText"
         app:layout_constraintLeft_toLeftOf="@+id/emailAddressText"
@@ -67,8 +67,10 @@
 
     <Button
         android:text="LOGIN"
+        android:background="@drawable/edit_text_border"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:id="@+id/signInButton"
         app:layout_constraintRight_toRightOf="@+id/passwordTextView"
         app:layout_constraintLeft_toLeftOf="@+id/passwordTextView"
@@ -91,6 +93,6 @@
         android:textStyle="normal|italic"
         android:fontFamily="serif"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="#000000" />
 
 </android.support.constraint.ConstraintLayout>

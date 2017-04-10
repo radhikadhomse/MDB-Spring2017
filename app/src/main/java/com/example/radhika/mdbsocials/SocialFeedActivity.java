@@ -44,7 +44,8 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
         socials = new ArrayList<>();
         recyclerView = (RecyclerView) findViewById(R.id.recView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        adapter = new SocialFeedAdapter(getApplicationContext(), socials);
+        recyclerView.setAdapter(adapter);
         initDB();
 
 //        recyclerView.setAdapter(adapter);
@@ -53,11 +54,10 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
     private void initDB () {
         db = FirebaseDatabase.getInstance().getReference();
         Utils.getUser(db, FirebaseAuth.getInstance().getCurrentUser());
-        adapter = new SocialFeedAdapter(getApplicationContext(), socials);
         db.child("Socials").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                socials = new ArrayList<Social>();
+                socials.clear();
                 Map<Social, String> map = new HashMap<>();
 
                 for (DataSnapshot p : snapshot.getChildren()) {
@@ -73,8 +73,7 @@ public class SocialFeedActivity extends AppCompatActivity implements View.OnClic
                 for (Social s : socials)
                     keys.add(map.get(s));
 
-                adapter.socials = socials;
-                recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
 
             @Override

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.00"
-        app:cardBackgroundColor="@color/bg3"
+        app:cardBackgroundColor="#C9F7FF"
         app:cardElevation="8dp"
         app:cardCornerRadius="3dp"
         app:contentPadding="5dp"
@@ -45,9 +45,11 @@
                     android:id="@+id/interestedName"
                     android:layout_weight="0.02"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
+                    android:textColor="#1E3F80"
                     android:gravity="center_vertical|center_horizontal|center"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:textStyle="normal|bold"
+                    android:fontFamily="sans-serif-smallcaps"/>
 
                 <TextView
                     android:text="Email"
@@ -55,9 +57,11 @@
                     android:id="@+id/interestedEmail"
                     android:layout_weight="0.23"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
+                    android:textColor="#1E3F80"
                     android:gravity="center_vertical|center_horizontal|center"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:textStyle="normal|bold"
+                    android:fontFamily="sans-serif-smallcaps"/>
 
             </LinearLayout>
 
